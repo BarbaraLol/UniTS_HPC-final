@@ -1,0 +1,24 @@
+double free or corruption (top)
+[thin005:3643548] *** Process received signal ***
+[thin005:3643548] Signal: Aborted (6)
+[thin005:3643548] Signal code:  (-6)
+[thin005:3643548] [ 0] /lib64/libc.so.6(+0x3cb60)[0x7f56024a8b60]
+[thin005:3643548] [ 1] /lib64/libc.so.6(+0x8cecc)[0x7f56024f8ecc]
+[thin005:3643548] [ 2] /lib64/libc.so.6(gsignal+0x16)[0x7f56024a8ab6]
+[thin005:3643548] [ 3] /lib64/libc.so.6(abort+0xd7)[0x7f56024927fc]
+[thin005:3643548] [ 4] /lib64/libc.so.6(+0x810fe)[0x7f56024ed0fe]
+[thin005:3643548] [ 5] /lib64/libc.so.6(+0x96c0c)[0x7f5602502c0c]
+[thin005:3643548] [ 6] /lib64/libc.so.6(+0x98d0c)[0x7f5602504d0c]
+[thin005:3643548] [ 7] /lib64/libc.so.6(__libc_free+0x73)[0x7f56025073d3]
+[thin005:3643548] [ 8] ./mandelbrot_mpi_omp[0x401e05]
+[thin005:3643548] [ 9] /lib64/libc.so.6(+0x27550)[0x7f5602493550]
+[thin005:3643548] [10] /lib64/libc.so.6(__libc_start_main+0x89)[0x7f5602493609]
+[thin005:3643548] [11] ./mandelbrot_mpi_omp[0x401215]
+[thin005:3643548] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 1 with PID 0 on node thin005 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
