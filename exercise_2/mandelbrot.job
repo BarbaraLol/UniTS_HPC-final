@@ -6,9 +6,8 @@
 #SBATCH --ntasks=4            # total number of MPI tasks
 #SBATCH --ntasks-per-node=2   # number of MPI tasks per node
 #SBATCH --cpus-per-task=2     # number of OpenMP threads per MPI task
-#SBATCH --time=01:00:00       # maximum wall time (hh:mm:ss)
-#SBATCH --partition=THIN      # partition name
-#SBATCH --exclude=fat[001-002] #To exlcude automatically the fat nodes
+#SBATCH --time=00:05:00       # maximum wall time (hh:mm:ss)
+#SBATCH --partition=EPYC      # partition name
 
 # Load the necessary module
 module load openMPI/4.1.5/gnu
@@ -17,4 +16,4 @@ module load openMPI/4.1.5/gnu
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 # Run the MPI program
-mpirun -np 2 ./mandelbrot_mpi_omp 1028 1028 -2.0 -1.5 1.0 1.5 65535 mandelbrot.pmg
+mpirun -np 2 ./mandelbrot_mpi_omp 1028 1028 -2.0 -2.0 2.0 2.0 65535 mandelbrot.pmg

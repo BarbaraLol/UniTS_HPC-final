@@ -29,7 +29,7 @@ unsigned short* mandelbrot_single_thread(int height, int width, double x_L, doub
     double d_x = (x_R - x_L) / (width - 1);
     double d_y = (y_R - y_L) / (height - 1);
 
-    unsigned short *M = (unsigned short *)malloc(height * width * sizeof(unsigned short));
+    unsigned short *M = (unsigned short *)malloc(width * sizeof(unsigned short));
 
     #pragma omp parallel for schedule(dynamic)
     for(int a = 0; a < height * width; ++a){
@@ -77,7 +77,7 @@ unsigned short* mandelbrot_matrix_master(int height, int width, double x_L, doub
     if(rank>0){
         M = (unsigned short *)malloc(width * sizeof(unsigned short));
         MPI_Send(M, width, MPI_UNSIGNED_SHORT, 0, TAG_TASK_ROW_RESULT, MPI_COMM_WORLD);
-        printf("[rank %d] sent dummy result\n", rank);
+        //printf("[rank %d] sent dummy result\n", rank);
 
         while(!done){
             recv_request = (MPI_Request*)malloc(sizeof(MPI_Request) * 2);
@@ -87,16 +87,16 @@ unsigned short* mandelbrot_matrix_master(int height, int width, double x_L, doub
             MPI_Recv(&requested_row, 1, MPI_INT, 0, TAG_TASK_ROW, MPI_COMM_WORLD, &status);
 
             // Waiting for either the compilation message or the new task
-            printf("[rank %d] waiting for either a new task or completion\n", rank);
+            //printf("[rank %d] waiting for either a new task or completion\n", rank);
             
             if(requested_row == -1){
                 done = 1;
-                printf("[rank %d] all done, terminated\n", rank);
+                //printf("[rank %d] all done, terminated\n", rank);
             } 
             if(status.MPI_TAG == TAG_TASK_ROW && requested_row >= 0){
-                printf("[rank %d] computing row %d\n", rank, requested_row);
+                //printf("[rank %d] computing row %d\n", rank, requested_row);
                 M = mandelbrot_matrix_worker_row(requested_row, height, width, x_L, x_R, y_R, y_L, I_max);
-                printf("[rank %d] is sending back to master node\n", rank);
+                //printf("[rank %d] is sending back to master node\n", rank);
                 MPI_Send(M, width, MPI_UNSIGNED_SHORT, 0, TAG_TASK_ROW_RESULT, MPI_COMM_WORLD);
                 free(recv_request);
                 // free(M);
@@ -139,7 +139,7 @@ unsigned short* mandelbrot_matrix_master(int height, int width, double x_L, doub
             }
 
             if(next_row < height){
-                printf("Assigning row %d to rank %d\n", next_row, status.MPI_SOURCE);
+                //printf("Assigning row %d to rank %d\n", next_row, status.MPI_SOURCE);
                 MPI_Send(&next_row, 1, MPI_INT, status.MPI_SOURCE, TAG_TASK_ROW, MPI_COMM_WORLD);
                 assigned_rows[status.MPI_SOURCE]=next_row;assigned_rows[status.MPI_SOURCE];
                 next_row++;
@@ -175,6 +175,7 @@ int main(int argc, char *argv[]){
         exit(1);
     }
 
+    double start_time, end_time;
     clock_t cputime;
     char* name_image;
 
@@ -217,7 +218,6 @@ int main(int argc, char *argv[]){
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-
     // 65535 for int or 255 for char
     unsigned short *M;
     if(size == 1){
@@ -226,12 +226,13 @@ int main(int argc, char *argv[]){
         M = mandelbrot_matrix_master(height, width, x_L, x_R, y_R, y_L, I_max);
     }    
 
+
     cputime = clock();
     double walltime = (double) cputime / CLOCKS_PER_SEC;
-    printf("[rank %d] cpu time: %f seconds\n", rank, walltime);
 
     if (rank == 0) {
         // Matrix M written in a pmg file
+        printf("[rank %d] cpu time: %f seconds\n", rank, walltime);
         write_pgm_image(M, I_max, height, width, "mandelbrot.pgm");
     }
 

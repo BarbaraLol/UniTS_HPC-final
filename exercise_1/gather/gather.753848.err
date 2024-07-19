@@ -1,0 +1,2 @@
+DIR is /orfeo/cephfs/home/dssc/bloletti/Exercises/UniTS_HPC-final/exercise_1/gather
+slurmstepd: error: *** JOB 753848 ON thin001 CANCELLED AT 2024-07-19T14:31:01 DUE TO TIME LIMIT ***

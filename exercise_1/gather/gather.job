@@ -1,0 +1,37 @@
+#!/bin/bash
+#SBATCH --job-name=gather
+
+# Specify the output and error files
+#SBATCH --output=%x.%j.out # this one is not in effect, due to the double hash
+#SBATCH --error=%x.%j.err
+
+# Define the number of nodes you need.
+#SBATCH --nodes=2
+
+# Define how long the job will run in real time. Format is d-hh:mm:ss
+# For a 1h30sec job
+#SBATCH --time=0-01:30:00
+#SBATCH --exclusive
+
+# Define the partition on which the job shall run, e.g. EPYC, THIN, GPU, DGX
+#SBATCH -p THIN
+# Restrict the job to run on the node(s) named
+# #SBATCH -w thin003
+
+# Define how much memory you need. Choose one between the following
+# --mem will define memory per node
+# --mem-per-cpu will define memory per CPU/core
+# #SBATCH --mem-per-cpu=1500MB
+# #SBATCH --mem=5GB    # this one is not in effect, due to the double hash
+
+#Start the programm
+
+>&2 echo "DIR is ${SLURM_SUBMIT_DIR}"
+
+dt=$(date +"%Y%m%d_%H%M%S")
+algo=1 # 2 -> binomial
+# 1 -> basic linear
+
+for np in $(seq 2 2 48); do
+mpirun --map-by core -np $np --mca coll_tuned_use_dynamic_rules true --mca coll_tuned_gather_algorithm $algo ../../../osu-micro-benchmarks-7.3/c/mpi/collective/blocking/osu_barrier -x 100 -f -i 1000 -m 2:2 | tail -1 | awk '{print $2}' >> ${dt}_thin_gather${algo}_msize.txt
+done

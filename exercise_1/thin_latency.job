@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#SBATCH --job-name=latency
+
+# Define the number of nodes you need.
+#SBATCH --nodes=2
+
+# Define how long the job will run in real time. Format is d-hh:mm:ss
+# For a 1 hour 35 minutes job
+#SBATCH --time=0-01:35:00
+
+# Define the partition on which the job shall run, e.g. EPYC, THIN, GPU, DGX
+#SBATCH -p THIN
+
+# Start the program
+
+>&2 echo "DIR is ${SLURM_SUBMIT_DIR}"
+
+dt=$(date +"%Y%m%d_%H%M%S")
+for i in {2..24..2}
+do
+mpirun --cpu-list 0,$i -np 2 ../../osu-micro-benchmarks-7.3/c/mpi/pt2pt/standard/osu_latency -x 100 -i 1000 -m 2:2 >> ${dt}_latency_thin_msize2.txt
+done
+# mpirun --cpu-list 0,24 -np 2 osu-micro-benchmarks-7.3/c/mpi/pt2pt/standard/osu_latency -x 100 -i 1000 -m 2:2 | tail -1 | awk '{print $2}' >> ${dt}_latency_thin_msize2.txt

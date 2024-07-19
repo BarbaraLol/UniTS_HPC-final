@@ -1,24 +1,24 @@
 double free or corruption (top)
-[thin005:3643548] *** Process received signal ***
-[thin005:3643548] Signal: Aborted (6)
-[thin005:3643548] Signal code:  (-6)
-[thin005:3643548] [ 0] /lib64/libc.so.6(+0x3cb60)[0x7f56024a8b60]
-[thin005:3643548] [ 1] /lib64/libc.so.6(+0x8cecc)[0x7f56024f8ecc]
-[thin005:3643548] [ 2] /lib64/libc.so.6(gsignal+0x16)[0x7f56024a8ab6]
-[thin005:3643548] [ 3] /lib64/libc.so.6(abort+0xd7)[0x7f56024927fc]
-[thin005:3643548] [ 4] /lib64/libc.so.6(+0x810fe)[0x7f56024ed0fe]
-[thin005:3643548] [ 5] /lib64/libc.so.6(+0x96c0c)[0x7f5602502c0c]
-[thin005:3643548] [ 6] /lib64/libc.so.6(+0x98d0c)[0x7f5602504d0c]
-[thin005:3643548] [ 7] /lib64/libc.so.6(__libc_free+0x73)[0x7f56025073d3]
-[thin005:3643548] [ 8] ./mandelbrot_mpi_omp[0x401e05]
-[thin005:3643548] [ 9] /lib64/libc.so.6(+0x27550)[0x7f5602493550]
-[thin005:3643548] [10] /lib64/libc.so.6(__libc_start_main+0x89)[0x7f5602493609]
-[thin005:3643548] [11] ./mandelbrot_mpi_omp[0x401215]
-[thin005:3643548] *** End of error message ***
+[epyc003:1738542] *** Process received signal ***
+[epyc003:1738542] Signal: Aborted (6)
+[epyc003:1738542] Signal code:  (-6)
+[epyc003:1738542] [ 0] /lib64/libc.so.6(+0x3ea00)[0x7f2fb843ea00]
+[epyc003:1738542] [ 1] /lib64/libc.so.6(+0x8ebec)[0x7f2fb848ebec]
+[epyc003:1738542] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f2fb843e956]
+[epyc003:1738542] [ 3] /lib64/libc.so.6(abort+0xcf)[0x7f2fb84287f4]
+[epyc003:1738542] [ 4] /lib64/libc.so.6(+0x82d3e)[0x7f2fb8482d3e]
+[epyc003:1738542] [ 5] /lib64/libc.so.6(+0x9893c)[0x7f2fb849893c]
+[epyc003:1738542] [ 6] /lib64/libc.so.6(+0x9aa3c)[0x7f2fb849aa3c]
+[epyc003:1738542] [ 7] /lib64/libc.so.6(free+0x73)[0x7f2fb849d133]
+[epyc003:1738542] [ 8] ./mandelbrot_mpi_omp[0x401316]
+[epyc003:1738542] [ 9] /lib64/libc.so.6(+0x29510)[0x7f2fb8429510]
+[epyc003:1738542] [10] /lib64/libc.so.6(__libc_start_main+0x89)[0x7f2fb84295c9]
+[epyc003:1738542] [11] ./mandelbrot_mpi_omp[0x401445]
+[epyc003:1738542] *** End of error message ***
 --------------------------------------------------------------------------
 Primary job  terminated normally, but 1 process returned
 a non-zero exit code. Per user-direction, the job has been aborted.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-mpirun noticed that process rank 1 with PID 0 on node thin005 exited on signal 6 (Aborted).
+mpirun noticed that process rank 1 with PID 0 on node epyc003 exited on signal 6 (Aborted).
 --------------------------------------------------------------------------
