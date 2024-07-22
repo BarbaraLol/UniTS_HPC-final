@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra -fopenmp -DOMP_TOUCH_FIRST -O3
 LDFLAGS = -lm
 LDFLAGS_VIZ = -lm -lSDL2
 EXEC = mandelbrot
-SRCS = mb.c pgm.c log.c 
+SRCS = mandelbrot.c pgm.c log.c 
 OBJS = $(SRCS:.c=.o)
 MPIRUN_FLAGS = --mca mca_base_component_show_load_errors 0 --map-by node --bind-to none
 

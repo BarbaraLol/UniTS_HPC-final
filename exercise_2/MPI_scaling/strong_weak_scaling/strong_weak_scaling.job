@@ -1,0 +1,44 @@
+#!/bin/bash
+#SBATCH --job-name=mandelbrot_mpi_omp
+#SBATCH --output=mandelbrot.out
+#SBATCH --error=mandelbrot.err
+#SBATCH --nodes=2             # number of nodes
+#SBATCH --ntasks-per-node=24  # number of MPI tasks per node
+#SBATCH --time=02:00:00       # maximum wall time (hh:mm:ss)
+#SBATCH --partition=THIN      # partition name
+#SBATCH --exclusive
+
+# Load the necessary module
+module load openMPI/4.1.5/gnu
+
+# Compile the program
+make clean
+make
+
+# Initialize the output files
+strong_output_file="mpi_strong_scaling_results.txt"
+weak_output_file="mpi_weak_scaling_results.txt"
+echo "Processes,Time" > $strong_output_file
+echo "Processes,Time" > $weak_output_file
+
+# Strong Scaling: Keep the problem size constant
+SIZE=1024
+for procs in 2 4 8 16 24 32 48; do
+    start=$(date +%s.%N)
+    { /usr/bin/time -v mpirun -np $procs ./mandelbrot $SIZE $SIZE -2.0 -2.0 2.0 2.0 65535 mandelbrot_strong_${procs}_procs.pgm; } &> temp_output.txt
+    end=$(date +%s.%N)
+    elapsed=$(echo "$end - $start" | bc)
+    time=$(grep "Elapsed (wall clock) time" temp_output.txt | awk '{print $8}')
+    echo "${procs},${elapsed}" >> $strong_output_file
+done
+
+# Weak Scaling: Increase the problem size proportionally with the number of processes
+for procs in 2 4 8 16 24 32 48; do
+    SIZE=$((1024 * procs))
+    start=$(date +%s.%N)
+    { /usr/bin/time -v mpirun -np $procs ./mandelbrot $SIZE $SIZE -2.0 -2.0 2.0 2.0 65535 mandelbrot_weak_${procs}_procs.pgm; } &> temp_output.txt
+    end=$(date +%s.%N)
+    elapsed=$(echo "$end - $start" | bc)
+    time=$(grep "Elapsed (wall clock) time" temp_output.txt | awk '{print $8}')
+    echo "${procs},${elapsed}" >> $weak_output_file
+done

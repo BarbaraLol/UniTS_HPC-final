@@ -3,17 +3,24 @@
 #SBATCH --output=mandelbrot.out
 #SBATCH --error=mandelbrot.err
 #SBATCH --nodes=2             # number of nodes
-#SBATCH --ntasks=4            # total number of MPI tasks
-#SBATCH --ntasks-per-node=2   # number of MPI tasks per node
-#SBATCH --cpus-per-task=2     # number of OpenMP threads per MPI task
+##SBATCH --ntasks=4            # total number of MPI tasks
+#SBATCH --ntasks-per-node=24           # number of MPI tasks per node
+##SBATCH --cpus-per-task=2     # number of OpenMP threads per MPI task
 #SBATCH --time=00:05:00       # maximum wall time (hh:mm:ss)
-#SBATCH --partition=EPYC      # partition name
+#SBATCH --partition=THIN      # partition name
+#SBATCH --exclusive
 
 # Load the necessary module
 module load openMPI/4.1.5/gnu
+
+# Compile the program
+make clean
+make
 
 # Set the number of OpenMP threads
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 # Run the MPI program
-mpirun -np 2 ./mandelbrot_mpi_omp 1028 1028 -2.0 -2.0 2.0 2.0 65535 mandelbrot.pmg
+# mpirun -np OMP_NUM_THREADS ./mandelbrot_mpi_omp 1024 1024 -2.0 -2.0 2.0 2.0 65535 mandelbrot.pmg
+# Run the MPI program and measure the time
+time mpirun -np $SLURM_NTASKS ./mandelbrot 1024 1024 -2.0 -2.0 2.0 2.0 65535 mandelbrot.pmg

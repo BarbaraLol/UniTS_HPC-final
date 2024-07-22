@@ -1,0 +1,31 @@
+#!/bin/bash
+#SBATCH --job-name=mandelbrot_mpi_omp
+#SBATCH --output=mandelbrot.out
+#SBATCH --error=mandelbrot.err
+#SBATCH --nodes=2             # number of nodes
+#SBATCH --ntasks-per-node=24           # number of MPI tasks per node
+#SBATCH --time=00:05:00       # maximum wall time (hh:mm:ss)
+#SBATCH --partition=THIN      # partition name
+#SBATCH --exclusive
+
+# Load the necessary module
+module load openMPI/4.1.5/gnu
+
+# Compile the program
+make clean
+make
+
+# Initialize the output file
+output_file="omp_scaling_results.txt"
+echo "Threads,Time" > $output_file
+
+# Run the program with varying number of threads
+for threads in 1 2 4 8 12 16 20 24; do
+    # Set the number of OpenMP threads
+    export OMP_NUM_THREADS=$threads
+    # Run the MPI program and measure the time
+    { /usr/bin/time -v mpirun -np 1 --bind-to none ./mandelbrot 1024 1024 -2.0 -2.0 2.0 2.0 65535 mandelbrot_${threads}_threads.pgm; } &> temp_output.txt
+    time=$(grep "Elapsed (wall clock) time" temp_output.txt | awk '{print $8}')
+    echo "${threads},${time}" >> $output_file
+done
+    

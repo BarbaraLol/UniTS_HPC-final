@@ -1,0 +1,2 @@
+/var/spool/slurm/d/job754267/slurm_script: line 34: syntax error near unexpected token `echo'
+/var/spool/slurm/d/job754267/slurm_script: line 34: `echo "Running latency test for CPU pair 0,$cpu..."'

@@ -1,0 +1,645 @@
+Estimating latency between core 0 and core 1
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.00
+4                       1.01
+8                       1.01
+16                      1.03
+32                      1.05
+64                      1.18
+128                     1.21
+256                     2.53
+512                     1.53
+1024                    1.68
+2048                    2.41
+4096                    3.36
+8192                    4.75
+16384                   6.33
+32768                   8.44
+65536                  12.44
+131072                 18.55
+262144                 27.81
+524288                 49.91
+1048576                95.20
+2097152               180.76
+4194304               354.15
+Estimating latency between core 0 and core 2
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.00
+4                       1.00
+8                       1.03
+16                      1.02
+32                      1.05
+64                      1.18
+128                     1.22
+256                     2.51
+512                     1.53
+1024                    1.68
+2048                    2.41
+4096                    3.35
+8192                    4.73
+16384                   6.34
+32768                   8.45
+65536                  12.32
+131072                 18.53
+262144                 27.76
+524288                 49.79
+1048576                93.73
+2097152               181.51
+4194304               354.32
+Estimating latency between core 0 and core 3
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.01
+4                       1.00
+8                       1.01
+16                      1.02
+32                      1.04
+64                      1.18
+128                     1.22
+256                     1.45
+512                     1.53
+1024                    1.67
+2048                    2.41
+4096                    3.35
+8192                    4.75
+16384                   6.34
+32768                   8.40
+65536                  12.57
+131072                 18.55
+262144                 28.02
+524288                 49.61
+1048576                93.56
+2097152               181.22
+4194304               353.96
+Estimating latency between core 0 and core 4
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.00
+4                       1.00
+8                       1.03
+16                      1.02
+32                      1.05
+64                      1.17
+128                     1.22
+256                     2.53
+512                     1.53
+1024                    1.68
+2048                    2.41
+4096                    3.36
+8192                    4.75
+16384                   6.34
+32768                   8.42
+65536                  12.31
+131072                 18.68
+262144                 27.82
+524288                 49.69
+1048576                94.09
+2097152               181.71
+4194304               354.90
+Estimating latency between core 0 and core 5
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.00
+4                       1.01
+8                       1.03
+16                      1.02
+32                      1.05
+64                      1.18
+128                     1.22
+256                     2.54
+512                     1.53
+1024                    1.68
+2048                    2.41
+4096                    3.36
+8192                    4.74
+16384                   6.35
+32768                   8.44
+65536                  12.30
+131072                 18.53
+262144                 28.01
+524288                 50.08
+1048576                94.06
+2097152               181.80
+4194304               354.46
+Estimating latency between core 0 and core 6
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.00
+4                       1.15
+8                       1.02
+16                      1.04
+32                      1.05
+64                      1.18
+128                     1.22
+256                     2.54
+512                     1.54
+1024                    1.69
+2048                    2.42
+4096                    3.35
+8192                    4.74
+16384                   6.34
+32768                   8.44
+65536                  12.27
+131072                 18.56
+262144                 28.08
+524288                 49.86
+1048576                93.91
+2097152               181.62
+4194304               354.88
+Estimating latency between core 0 and core 7
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.01
+4                       1.00
+8                       1.02
+16                      1.03
+32                      1.05
+64                      1.18
+128                     1.22
+256                     2.53
+512                     1.54
+1024                    1.68
+2048                    2.41
+4096                    3.35
+8192                    4.74
+16384                   6.34
+32768                   8.45
+65536                  12.31
+131072                 18.55
+262144                 27.91
+524288                 49.89
+1048576                93.94
+2097152               181.54
+4194304               354.73
+Estimating latency between core 0 and core 8
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.01
+4                       1.00
+8                       1.03
+16                      1.03
+32                      1.05
+64                      1.18
+128                     1.22
+256                     2.53
+512                     1.53
+1024                    1.69
+2048                    2.41
+4096                    3.35
+8192                    4.76
+16384                   6.35
+32768                   8.39
+65536                  12.45
+131072                 18.54
+262144                 27.83
+524288                 50.05
+1048576                94.00
+2097152               181.58
+4194304               354.33
+Estimating latency between core 0 and core 9
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.00
+4                       1.00
+8                       1.01
+16                      1.02
+32                      1.05
+64                      1.18
+128                     1.22
+256                     2.53
+512                     1.53
+1024                    1.68
+2048                    2.41
+4096                    3.50
+8192                    4.75
+16384                   6.36
+32768                   8.44
+65536                  12.29
+131072                 18.53
+262144                 27.85
+524288                 49.89
+1048576                93.78
+2097152               181.94
+4194304               354.41
+Estimating latency between core 0 and core 10
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.00
+4                       1.00
+8                       1.03
+16                      1.02
+32                      1.05
+64                      1.18
+128                     1.22
+256                     2.53
+512                     1.53
+1024                    1.68
+2048                    2.41
+4096                    3.36
+8192                    4.75
+16384                   6.34
+32768                   8.45
+65536                  12.43
+131072                 18.67
+262144                 28.02
+524288                 49.75
+1048576                93.82
+2097152               181.46
+4194304               354.95
+Estimating latency between core 0 and core 11
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.01
+4                       1.01
+8                       1.01
+16                      1.04
+32                      1.05
+64                      1.18
+128                     1.22
+256                     1.46
+512                     1.52
+1024                    1.68
+2048                    2.41
+4096                    3.35
+8192                    4.74
+16384                   6.36
+32768                   8.43
+65536                  12.31
+131072                 18.70
+262144                 28.00
+524288                 49.86
+1048576                94.21
+2097152               181.44
+4194304               354.90
+Estimating latency between core 0 and core 12
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.00
+4                       1.02
+8                       1.01
+16                      1.02
+32                      1.04
+64                      1.20
+128                     1.22
+256                     1.46
+512                     1.53
+1024                    1.68
+2048                    2.41
+4096                    3.35
+8192                    4.75
+16384                   6.33
+32768                   8.45
+65536                  12.44
+131072                 18.53
+262144                 27.85
+524288                 49.81
+1048576                93.89
+2097152               181.49
+4194304               354.23
+Estimating latency between core 0 and core 13
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.00
+2                       1.00
+4                       1.16
+8                       1.01
+16                      1.02
+32                      1.05
+64                      1.18
+128                     1.22
+256                     1.45
+512                     1.52
+1024                    1.68
+2048                    2.41
+4096                    3.35
+8192                    4.88
+16384                   6.35
+32768                   8.44
+65536                  12.30
+131072                 18.53
+262144                 27.97
+524288                 49.94
+1048576                93.89
+2097152               181.58
+4194304               354.35
+Estimating latency between core 0 and core 14
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.15
+2                       1.00
+4                       1.00
+8                       1.01
+16                      1.03
+32                      1.04
+64                      1.17
+128                     1.22
+256                     1.45
+512                     1.52
+1024                    1.68
+2048                    2.41
+4096                    3.36
+8192                    4.74
+16384                   6.33
+32768                   8.45
+65536                  12.31
+131072                 18.52
+262144                 27.91
+524288                 49.87
+1048576                93.90
+2097152               181.73
+4194304               354.52
+Estimating latency between core 0 and core 15
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.02
+4                       1.00
+8                       1.03
+16                      1.02
+32                      1.05
+64                      1.19
+128                     1.22
+256                     1.46
+512                     1.54
+1024                    1.68
+2048                    2.41
+4096                    3.36
+8192                    4.75
+16384                   6.35
+32768                   8.45
+65536                  12.31
+131072                 18.54
+262144                 27.97
+524288                 49.75
+1048576                94.00
+2097152               181.72
+4194304               354.83
+Estimating latency between core 0 and core 16
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.00
+2                       1.01
+4                       1.00
+8                       1.01
+16                      1.04
+32                      1.05
+64                      1.18
+128                     1.22
+256                     1.46
+512                     2.61
+1024                    1.68
+2048                    2.41
+4096                    3.36
+8192                    4.75
+16384                   6.34
+32768                   8.45
+65536                  12.43
+131072                 18.55
+262144                 27.88
+524288                 49.86
+1048576                93.71
+2097152               181.29
+4194304               354.67
+Estimating latency between core 0 and core 17
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.01
+4                       1.01
+8                       1.02
+16                      1.03
+32                      1.06
+64                      1.19
+128                     1.22
+256                     2.52
+512                     1.53
+1024                    1.68
+2048                    2.41
+4096                    3.37
+8192                    4.89
+16384                   6.34
+32768                   8.41
+65536                  12.32
+131072                 18.55
+262144                 28.13
+524288                 49.92
+1048576                93.83
+2097152               181.49
+4194304               354.78
+Estimating latency between core 0 and core 18
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.00
+2                       1.00
+4                       1.02
+8                       1.01
+16                      1.02
+32                      1.04
+64                      1.18
+128                     1.21
+256                     1.45
+512                     1.53
+1024                    1.71
+2048                    2.41
+4096                    3.36
+8192                    4.75
+16384                   6.34
+32768                   8.43
+65536                  12.32
+131072                 18.53
+262144                 28.08
+524288                 49.75
+1048576                93.98
+2097152               181.37
+4194304               354.53
+Estimating latency between core 0 and core 19
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.00
+2                       1.00
+4                       1.00
+8                       1.01
+16                      1.03
+32                      1.06
+64                      1.18
+128                     1.22
+256                     1.45
+512                     1.52
+1024                    1.68
+2048                    2.41
+4096                    3.34
+8192                    4.74
+16384                   6.32
+32768                   8.45
+65536                  12.32
+131072                 18.67
+262144                 27.90
+524288                 49.70
+1048576                93.75
+2097152               181.41
+4194304               354.28
+Estimating latency between core 0 and core 20
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.00
+2                       1.01
+4                       1.01
+8                       1.01
+16                      1.02
+32                      1.04
+64                      1.18
+128                     1.21
+256                     2.52
+512                     1.53
+1024                    1.68
+2048                    2.54
+4096                    3.35
+8192                    4.89
+16384                   6.34
+32768                   8.43
+65536                  12.43
+131072                 18.53
+262144                 27.91
+524288                 49.92
+1048576                93.88
+2097152               181.36
+4194304               354.84
+Estimating latency between core 0 and core 21
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.00
+4                       1.02
+8                       1.01
+16                      1.02
+32                      1.05
+64                      1.18
+128                     1.22
+256                     2.51
+512                     1.53
+1024                    1.68
+2048                    2.54
+4096                    3.35
+8192                    4.74
+16384                   6.35
+32768                   8.44
+65536                  12.30
+131072                 18.54
+262144                 27.98
+524288                 49.99
+1048576                93.84
+2097152               181.60
+4194304               355.00
+Estimating latency between core 0 and core 22
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.00
+2                       1.00
+4                       1.01
+8                       1.01
+16                      1.03
+32                      1.04
+64                      1.17
+128                     1.21
+256                     2.50
+512                     1.52
+1024                    1.68
+2048                    2.42
+4096                    3.35
+8192                    4.76
+16384                   6.34
+32768                   8.44
+65536                  12.32
+131072                 18.51
+262144                 27.96
+524288                 49.70
+1048576                93.72
+2097152               181.26
+4194304               354.48
+Estimating latency between core 0 and core 23
+# OSU MPI Latency Test v7.3
+# Size          Latency (us)
+# Datatype: MPI_CHAR.
+1                       1.01
+2                       1.00
+4                       1.00
+8                       1.03
+16                      1.02
+32                      1.04
+64                      1.18
+128                     1.22
+256                     1.45
+512                     1.53
+1024                    1.68
+2048                    2.41
+4096                    3.35
+8192                    4.76
+16384                   6.35
+32768                   8.43
+65536                  12.30
+131072                 18.66
+262144                 27.86
+524288                 49.73
+1048576                93.65
+2097152               181.28
+4194304               354.07
+Estimating latency between core 0 and core 24
+Estimating latency between core 0 and core 25
+Estimating latency between core 0 and core 26
+Estimating latency between core 0 and core 27
+Estimating latency between core 0 and core 28
+Estimating latency between core 0 and core 29
+Estimating latency between core 0 and core 30
+Estimating latency between core 0 and core 31
+Estimating latency between core 0 and core 32
+Estimating latency between core 0 and core 33
+Estimating latency between core 0 and core 34
+Estimating latency between core 0 and core 35
+Estimating latency between core 0 and core 36
+Estimating latency between core 0 and core 37
+Estimating latency between core 0 and core 38
+Estimating latency between core 0 and core 39
+Estimating latency between core 0 and core 40
+Estimating latency between core 0 and core 41
+Estimating latency between core 0 and core 42
+Estimating latency between core 0 and core 43
+Estimating latency between core 0 and core 44
+Estimating latency between core 0 and core 45
+Estimating latency between core 0 and core 46
+Estimating latency between core 0 and core 47

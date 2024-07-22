@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#SBATCH --job-name=latency_estimation
+
+# Define the number of nodes you need.
+#SBATCH --nodes=2
+
+# Define how long the job will run in real time. Format is d-hh:mm:ss
+#SBATCH --time=0-01:00:00
+
+# Define the partition on which the job shall run, e.g. EPYC, THIN, GPU, DGX
+#SBATCH -p THIN
+#SBATCH --exclude=fat[001-002]
+
+# Load necessary modules
+module load openMPI/4.1.5/gnu
+
+# Start the program
+>&2 echo "DIR is ${SLURM_SUBMIT_DIR}"
+
+dt=$(date +"%Y%m%d_%H%M%S")
+output_file="${dt}_latency_thin.txt"
+
+# Estimate latency between core#0 and all other cores on a THIN node
+for core in {1..47}
+do
+  echo "Estimating latency between core 0 and core $core" >> $output_file
+  mpirun --cpu-set 0,$core -np 2 ../../osu-micro-benchmarks-7.3/c/mpi/pt2pt/standard/osu_latency -x 100 -i 1000 >> $output_file
+done
